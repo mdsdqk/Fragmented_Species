@@ -1,0 +1,241 @@
+
+<html>
+
+<head>
+    <style>
+        .user{float:right}
+        .usertext{border:2px solid green;margin:30px;font-size:20px}
+        .animaltext{position:absolute;left:25%;border:none;margin:30px;padding:10px;font-size:20px;width:20%;top:5%}
+        .redpanda{position:absolute;top:40%;height:50%;left:7%}
+        #sp{position:absolute;left:12%}
+         .dropdown
+	{
+		display:none;
+		position:absolute;
+		top:11%;
+		left:0px;
+		width:100%;
+		z-index:99;
+	}
+	ul
+	{
+		margin:0%;
+		padding:0%;
+}
+
+    ul li a{
+    	text-decoration: none;
+    	display:block;
+    	color:white;
+    }
+
+	.b{background-color: #435D69;}
+
+    ul li{
+    	width:10%;
+    	height:0%;
+    	padding:10px;
+    	background-color: #546E7A;
+    	font-size:20px;
+		text-align:center;
+       	overflow:hidden;
+    }
+    .puzzle:hover{
+    	cursor: pointer;
+    }
+    
+
+
+    .mainPic
+    {
+         position:absolute;
+    left:25%;
+    width:50%;
+    top:20%;
+      
+}
+
+.puzzle{
+	position:absolute;
+	left:0%;
+	top:0%;
+	height:58px;
+	width:58px;
+	
+	transition: all 1s;
+}
+
+#p{
+	width:58px;
+    margin:0px;
+    left:0%;
+	height:58px;
+	transition: all 1s;
+
+}
+
+    ul li:hover{
+    	background-color:#CFD8DC;
+		color:black;
+		
+    }
+
+	ul li a:hover{
+		color:black;
+	}
+
+    #bg{
+        top:0px;bottom:0px;left:0px;right:0px;position:absolute;height:100%;width:100%;z-index:-99
+    }
+
+    #sp{width:500px;height:300px;left:20%;top:5%}
+
+        </style>
+
+</head>
+
+<body>
+    <img src=assets/backgroundGreen.jpg id="bg"/>
+
+<div id="md">
+
+
+<div class="user" id="user">
+
+<input type="text" rows="10" cols="10" class="usertext" id ="text"/>
+
+    <input type='button' name="send" value="send" onclick="send()" />
+
+</div>
+
+<div class="animal" id="animal">
+<img src="assets/speechBubble.png" id="sp"/>
+
+    <p class="animaltext" id ="atext" >
+Hi! Its so nice to see you! You can ask me questions about my life and habits
+    </p>
+
+</div>
+
+
+
+
+
+
+<img src="assets/red-panda2-7E7V7g-clipart.png" class="redpanda"/>
+
+</div>
+
+<div id="puzzle">
+        <img src="assets/puzzle.svg" id ="p"/>
+        </div>
+
+            <div id="dropdown" class="dropdown">
+<ul>
+<li class="a"><a href="http://localhost:8080/home.html">Home</a></li>
+<li class="b"><a href="#about">About Us</a></li>
+<li class="a"><a href="http://localhost:8080/feedback.html">Feedback</a></li>
+<li class="b"><a href="#gallery">Gallery</a></li>
+<li class="a"><a href="http://localhost:8080/chat.html">Chat bot</a></li>
+<li class="b"><a href="http://localhost:8080/slideshow.html">Slideshow</a></li>
+</ul>
+</div>
+
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<script>
+
+    
+document.getElementById('text').addEventListener("focus",clear,false);
+document.addEventListener("keydown",key,false);
+
+function key(e)
+{
+    if(e.keyCode==13)
+    send();
+
+}
+
+
+function send()
+{
+    var userText = document.getElementById('text').value.toLowerCase();
+    
+
+
+if(userText=='hello' || userText=='hi')
+    var animalText="hello";
+else if(userText.includes('bye') || userText.includes('goodbye'))
+    var animalText="ok, see you";
+else if(userText.includes('how') && userText.includes('you'))
+    var animalText="Not too good, actually. My species is threatened, and we have to struggle to survive";
+else if(userText.includes("conservation")||userText.includes("effort"))
+    var animalText="India and China have created protected zones for our survival.Hunting us is illegal in all the countries we call home";
+else if((userText.includes("few") || userText.includes("dissapearing")) && (userText.includes("you") || userText.includes('panda'))||userText.includes('threat'))
+ var animalText="My habitat is diminishing, and a lot of humans are hunting us down for our bright, orange coloured fur. We may not even survive in the wild much longer if this goes on.";
+else if(userText.includes("live") && userText.includes("where") )
+    var animalText="I live in the temprate forests in the Himalayas.Red pandas don't have borders between countries, but I believe I live in India, Nepal and China";
+else if(userText.includes("what") && userText.includes("eat"))
+    var animalText="I love Bamboo!, but I also eat flowers, eggs and berries, and sometimes, even small mammals and birds";
+else if(userText.includes("what") && userText.includes("name"))
+ var animalText="My scientific name is Ailurus fulgens, but you can call me Red Panda. I'm also sometimes called the Firefox";
+else if(userText.includes("news"))
+ var animalText="A baby red panda was born at Fota Wildlife park recently. He looks so cute!!! You can suggest a name for him on the park website ";
+else if(userText.includes("help"))
+ var animalText="Humans need to understand the need to conserve our habitat, and should not hunt down our species for their personal benefit.";
+ else if(userText.includes("zoo")||userText.includes("captivity"))
+    var animalText="We can adapt to captivity pretty well, and are also capable of reproduction in zoos";
+ else if(userText.includes("cousin")||userText.includes("relative"))
+    var animalText="The Giant Panda is a distant relative.Like me, the Giant Panda loves bamboo too!";
+else if(userText.includes("habits")||userText.includes("behaviour"))
+    var animalText="We are very shy and secretive, and solitary. We are also nocturnal, meaning we usually come out at night.We sleep in trees, and usually spend our whole lives around them.";
+else if((userText.includes("live") && !userText.includes("where"))||userText.includes("expectancy")||userText.includes("life"))
+    var animalText="Red Pandas live for 12-14 years";
+else if(userText.includes('nice') || userText.includes('talking'))
+    var animalText="It was nice talking to you too. You seem like a Human who understands our concerns";
+else if(userText.includes("thank"))
+    var animalText="You're welcome"
+else
+    var animalText="I'm sorry, I didn't get what you asked";
+
+document.getElementById('atext').innerHTML = animalText;
+responsiveVoice.speak(animalText,"Hindi Female");
+clear();
+}
+
+function clear()
+{
+   document.getElementById('text').value=""; 
+}
+
+ document.getElementById("puzzle").addEventListener("click",menuopen,false);
+
+	function menuopen(e){
+		
+		 	document.getElementById("dropdown").style.display="block";
+		 	
+		 	document.getElementById("p").style.transform="rotate(180deg)";
+			document.getElementById('md').style.filter="blur(5px) brightness(75%)";
+    }
+
+    document.addEventListener("click",close,false);
+
+
+
+	function close(e)
+	{
+				
+      
+				if(e.target.id!='p' && document.getElementById('dropdown').style.display=='block')
+				{document.getElementById("dropdown").style.display="none";
+				document.getElementById("p").style.transform="rotate(0deg)";
+                document.getElementById('md').style.filter="blur()";
+				
+                }
+	}
+
+</script>
+
+
+</body>
+
+</html>

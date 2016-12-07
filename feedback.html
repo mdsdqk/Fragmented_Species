@@ -1,0 +1,282 @@
+<html>
+<head>
+
+<style>
+.bg{position:absolute;left:0px;right:0px;top:0px;bottom:0px;height:100%;width:100%;margin:0px;z-index:-99}
+h1{color:#F0D9D7;font-size:36px;padding:20px}
+.form{position:absolute;padding:30px;margin:30px;width:50%;left:20%;top:30%}
+input{border:none;font-size:16px;padding:10px;}
+textarea{border:none;font-size:16px;padding:10px;}
+.submit{padding:15px;background:#2196F3;color:white;font-size:26px;margin:30px;}
+label{color:white;font-size:20px}
+img{
+            position:relative;
+			  display:inline;
+			  height:30px;
+			  width:30px;
+			  top:10px;
+              margin:5px
+			}
+
+.dropdown
+	{
+		display:none;
+		position:absolute;
+		top:11%;
+		left:0px;
+		width:100%;
+		z-index:99;
+	}
+	ul
+	{
+		margin:0%;
+		padding:0%;
+}
+
+    ul li a{
+    	text-decoration: none;
+    	display:block;
+    	color:white;
+    }
+
+	.b{background-color: #435D69;}
+
+    ul li{
+    	width:10%;
+    	height:0%;
+    	padding:10px;
+    	background-color: #546E7A;
+    	font-size:20px;
+		text-align:center;
+       	overflow:hidden;
+    }
+    .puzzle:hover{
+    	cursor: pointer;
+    }
+    
+
+
+    .mainPic
+    {
+         position:absolute;
+    left:25%;
+    width:50%;
+    top:20%;
+      
+}
+
+.puzzle{
+	position:absolute;
+	left:0%;
+	top:0%;
+	height:58px;
+	width:58px;
+	
+	transition: all 1s;
+}
+
+#p{
+	width:58px;
+	height:58px;
+	top:0px;
+	margin:0px;
+	transition: all 1s;
+
+}
+
+    ul li:hover{
+    	background-color:#CFD8DC;
+		color:black;
+		
+    }
+
+	ul li a:hover{
+		color:black;
+	}
+
+
+</style>
+</head>
+<body>
+
+<img src="assets/backgr.jpg" class="bg" id="bg" />
+
+<h1 align="center" >Your Feedback Is Important To Us</h1>
+<h1>Please take a minute to review and rate our website. We will be pleased to hear suggestion on improvement on this website.</h1>
+
+
+<form action="feedback.php" ID="form">
+
+<div class="form" id="formDiv">
+
+<textarea rows="7" cols="80" name ="review" placeholder="Please type your review here" ID="text">
+</textarea>
+<br>
+<div id="abc">
+		<img src="Star Filled-104 (2).png"  class="star" id="star_0"/>
+		<img src="Star Filled-104 (2).png" class="star"  id="star_1"/>
+		<img src="Star Filled-104 (2).png" class="star"  id="star_2"/>
+		<img src="Star Filled-104 (2).png" class="star" id="star_3"/>
+		<img src="Star Filled-104 (2).png" class="star" id="star_4"/>
+	
+
+
+
+</div>
+
+<br>
+<input type="text" name ="name"  id="name" placeholder="Name"/>
+<br>
+<input type="submit" value="Submit" class="submit"/>
+
+
+<br>
+</div>
+
+</form>
+<div class="puzzle" id="puzzle">
+ <img src="assets/puzzle.svg" id="p"/>
+</div>	
+
+<div id="dropdown" class="dropdown">
+<ul>
+<li class="a"><a href="http://localhost:8080/home.html">Home</a></li>
+<li class="b"><a href="#about">About Us</a></li>
+<li class="a"><a href="http://localhost:8080/feedback.html">Feedback</a></li>
+<li class="b"><a href="http://localhost:8080/gallery.html">Gallery</a></li>
+<li class="a"><a href="http://localhost:8080/chat.html">Chat bot</a></li>
+<li class="b"><a href="http://localhost:8080/slideshow.html">Slideshow</a></li>
+</ul>
+</div>
+
+
+<script>
+      var stars = document.querySelectorAll(".star");
+
+			for(var i=0;i<stars.length;i++)
+			{
+				stars[i].addEventListener("mouseover",rate,false)
+			}
+
+			function rate(e)
+			{
+			
+
+				var index;
+				for(var i=0;i<stars.length;i++)
+				{
+					if(e.target.id==stars[i].id)
+					{
+						index=i;
+						break;
+					}
+				}
+
+				for(var i=0;i<=index;i++)
+				{
+					stars[i].src="Star Filled-104.png";
+				}
+			}
+			
+			for(var i=0;i<stars.length;i++)
+			{
+				stars[i].addEventListener("mouseout",unrate,false)
+			}
+
+			function unrate(e)
+			{
+				for(var i=0;i<stars.length;i++)
+				stars[i].src="Star Filled-104 (2).png";
+			}
+          
+			
+
+			for(var i=0;i<stars.length;i++)
+			{
+				stars[i].addEventListener("click",save,false);
+				
+			}
+
+			function save(e)
+			{
+			var index;
+				for(var i=0;i<stars.length;i++)
+				{
+					if(e.target.id==stars[i].id)
+					{
+						index=i;
+						break;
+					}
+				}
+
+				for(var i=0;i<=index;i++)
+				{
+					stars[i].src="Star Filled-104.png";
+					
+					
+			}
+			for(var i=0;i<stars.length;i++)
+			{
+			stars[i].removeEventListener("mouseout",unrate,false);
+			stars[i].removeEventListener("mouseover",rate,false);
+			stars[i].removeEventListener("click",save,false);
+			}
+
+            var rating = document.createElement("input");
+            rating.setAttribute("type","hidden");
+            rating.setAttribute("name","rating");
+            rating.setAttribute("value",index+1);
+
+
+            document.getElementById('formDiv').appendChild(rating);
+
+			
+			}
+
+			function cl(e)
+			{
+				for(var i=0;i<stars.length;i++)
+				{
+					stars[i].src="Star Filled-104 (2).png";
+					stars[i].addEventListener("mouseover",rate,false);
+					stars[i].addEventListener("mouseout",unrate,false);
+					stars[i].addEventListener("click",save,false);
+				}
+			}
+
+			document.getElementById("puzzle").addEventListener("click",menuopen,false);
+
+	function menuopen(e){
+		
+		 	document.getElementById("dropdown").style.display="block";
+		 	
+		 	document.getElementById("p").style.transform="rotate(180deg)";
+	}
+
+
+
+	document.addEventListener("click",close,false);
+
+function close(e)
+	{
+				
+      
+				if(e.target.id!='p' && document.getElementById('dropdown').style.display=='block')
+				{document.getElementById("dropdown").style.display="none";
+				document.getElementById("p").style.transform="rotate(0deg)";
+				document.getElementById('md').style.filter="blur()";
+					}
+
+	}
+
+
+
+			
+			
+
+
+    </script>
+
+
+</body>
+</html>

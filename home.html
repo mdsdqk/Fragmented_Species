@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="icon" type="image/gif" href="red panda logo.png" />
+
+        
+        <link href="https://fonts.googleapis.com/css?family=Iceberg" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+        <style>
+            .md{position:absolute;top:0px;bottom:0px;left:0px;right:0px;height:100%;width:100%;z-index:-99}
+            .bg{position:absolute;left:0px;right:0px;top:0px;bottom:0px;margin:0px;height:100%;width:100%;}
+            .vr{height:13.1%;width:0.13%;position:absolute;left:27.34%;top:85.42%;color:white;background-color:white}
+    #sec{left:49.14%}    
+    #th{left:74.22%}       
+            .puzz{position:absolute;top:0px;left:0px}
+            .fb{position:absolute;top:88.02%;height:8.2%;width:4.9%;left:51.95%}
+            .twit{position:absolute;top:86.45%;height:13.5%;width:7.8%;left:57.97%;}
+            .insta{position:absolute;top:89.02%;height:6.77%;width:4.06%;left:67.58%}
+            .feath{position:absolute;top:88.02%;height:50px;width:50px;left:19.69%}
+            .pug{position:absolute;top:88.02%;height:7.68%;width:3.9%;left:76.48%}
+            .dis{font-family:'Poiret One', cursive;color:#FFFF00;position:absolute;top:86.92%;left:30.62%;font-size:24px;}
+            .frag{font-family:'Iceberg',cursive;color:#F0D9D7;font-size:144px;line-height:0px}
+            .spe{font-family:'Lakki Reddy',cursive;font-size:100px;color:#B2CAE4;text-align:center;left:17.96%;line-height:0px}
+            .exp{position:absolute;width:19.61%;padding:15px;transition-duration:1s;background-color:#2196F3;color:white;text-align:center;top:65%;line-height:0px;left:23.51%;font-family:"Comic Sans MS", cursive, sans-serif;text-decoration:none;}
+            .slide{position:absolute;width:19.61%;transition-duration:1s;background-color:#FF9800;padding:15px;color:white;text-align:center;top:65%;line-height:0px;left:55.7%;font-family:"Comic Sans MS", cursive, sans-serif}
+            #disclaimer{position:absolute;opacity:0.7;width:50%;background-color:white;top:60%;left:20%;padding:30px;margin:0px;font-family:'Poiret One', cursive;}
+            .sp{position:absolute;top:40.1%;text-align:center;width:100%}
+            .fr{position:absolute;text-align:center;width:100%;padding:0px;top:14.329%}
+            p.li:{text-decoration:none}
+            p.li:visited{text-decoration:none}
+            .dropdown
+	{
+		display:none;
+		position:absolute;
+		top:11%;
+		left:0px;
+		width:100%;
+		z-index:99;
+	}
+	ul
+	{
+		margin:0%;
+		padding:0%;
+}
+
+    ul li a{
+    	text-decoration: none;
+    	display:block;
+    	color:white;
+    }
+
+	.b{background-color: #435D69;}
+
+    ul li{
+    	width:10%;
+    	height:0%;
+    	padding:10px;
+    	background-color: #546E7A;
+    	font-size:20px;
+		text-align:center;
+       	overflow:hidden;
+    }
+    .puzzle:hover{
+    	cursor: pointer;
+    }
+    
+
+
+    .mainPic
+    {
+         position:absolute;
+    left:25%;
+    width:50%;
+    top:20%;
+      
+}
+
+.puzzle{
+	position:absolute;
+	left:0%;
+	top:0%;
+	height:58px;
+	width:58px;
+	
+	transition: all 1s;
+}
+
+#p{
+	width:58px;
+    margin:0px;
+    left:0%;
+	height:58px;
+	transition: all 1s;
+
+}
+
+    ul li:hover{
+    	background-color:#CFD8DC;
+		color:black;
+		
+    }
+
+	ul li a:hover{
+		color:black;
+	}
+
+
+            p:link{text-decoration:none}
+            p:visited{text-decoration:none}
+            .exp:hover,.slide:hover{transform:scale(1.1);}
+          
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="md" id="md" onclick="closeAll()">
+
+        
+            <img src="assets/backgr.jpg" class="bg" id="bg" onclick="cli('bg')"/>
+            
+            <a href="http://www.facebook.com">
+            <img src="assets/fb.png" class="fb"/>
+            </a>
+            <a href="http://twitter.com">
+            <img src="assets/twit.png" class="twit"/>
+            </a>
+            <a href="http://instagram.com">
+            <img src="assets/insta.svg" class="insta"/>
+            </a>
+            <div class="vr"></div>
+            
+            
+            
+            <img src="assets/feather.svg" class="feath"/>
+            <img src="pugmark.png" class="pug"/>
+            <h3 class="dis" onclick="cli('disclaimer')" id='dis'>DISCLAIMER | FAQ</h3>
+            <div class="vr" id="sec"> </div>
+            <div class="fr">
+            <h1 class="frag">FRAGMENTED</h1>
+            </div>
+            <div class="sp">
+            <h1 class="spe">Species</h1> 
+            </div>
+            <a href="animal.html" style="text-decoration:none">
+            <div class="exp">
+                <p class="li">EXPLORE</p>
+            </div>
+            <div class="vr" id="th"> </div>
+            </a>
+            <a href="slideshow.html" style="text-decoration:none">
+            <div class="slide">
+                <p class="li">SLIDESHOW</p>
+            </div>
+            </a>
+
+            </div>  <!--div md is closed-->
+<div id="puzzle">
+        <img src="assets/puzzle.svg" id ="p"/>
+        </div>
+
+            <div id="dropdown" class="dropdown">
+<ul>
+<li class="a"><a href="http://localhost:8080/home.html">Home</a></li>
+<li class="b"><a href="#about">About Us</a></li>
+<li class="a"><a href="http://localhost:8080/feedback.html">Feedback</a></li>
+<li class="b"><a href="#gallery">Gallery</a></li>
+<li class="a"><a href="http://localhost:8080/chat.html">Chat bot</a></li>
+<li class="b"><a href="http://localhost:8080/slideshow.html">Slideshow</a></li>
+</ul>
+</div>
+
+
+            <div id="disclaimer" style="display:none">
+                <h2><u>DISCLAIMER</u></h2>
+                <p>
+                    We are not responsible for the accuracy of the information displayed on the website.
+                    We do not certify any of the facts given on the website. The information on the website has been cited from various sources including Wikipedia and IUCN
+                    </p>
+            </div> 
+            <h3 class="dis" onclick="showDisc()">DISCLAIMER | FAQ</h3>
+
+
+<script>
+            function showDisc()
+            {
+                document.getElementById('disclaimer').style.display="block";
+                document.getElementById('md').style.filter="blur(5px)";
+            }
+
+            function closeAll()
+            {
+                 document.getElementById('disclaimer').style.display="none";
+                document.getElementById('md').style.filter="blur()";
+            }
+
+    document.getElementById("puzzle").addEventListener("click",menuopen,false);
+
+	function menuopen(e){
+		
+		 	document.getElementById("dropdown").style.display="block";
+		 	document.getElementById("dropdown").style.height="10%";
+		 	document.getElementById("p").style.transform="rotate(180deg)";
+			document.getElementById('md').style.filter="blur(5px) brightness(75%)";
+            document.getElementsById('dis').style.filter="blur(5px) brightness(75%)";
+	}
+
+    document.addEventListener("click",close,false);
+
+
+
+	function close(e)
+	{
+				
+      
+				if(e.target.id!='p' && document.getElementById('dropdown').style.display=='block')
+				{document.getElementById("dropdown").style.display="none";
+				document.getElementById("p").style.transform="rotate(0deg)";
+				document.getElementById('md').style.filter="blur()";
+                document.getElementsById('dis').style.filter="blur()";
+                }
+	}
+
+        </script>
+    </body>
+
+
+</html>

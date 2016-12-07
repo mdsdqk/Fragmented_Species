@@ -1,0 +1,179 @@
+<html>
+
+    <head>
+
+        <style>
+
+            img{position:relative;width:50%;height:60%;left:23%;margin:30px}
+            h1{font-size:96px;postion:relative;text-align:center;margin:30px}
+            #next{position:absolute;height:50px;width:50px;left:95%;margin:10px;top:87%}
+            #prev{position:absolute;height:50px;width:50px;left:0px;margin:10px;top:87%}
+
+   .dropdown
+	{
+		display:none;
+		position:absolute;
+		top:11%;
+		left:0px;
+		width:100%;
+		z-index:99;
+	}
+	ul
+	{
+		margin:0%;
+		padding:0%;
+}
+
+    ul li a{
+    	text-decoration: none;
+    	display:block;
+    	color:white;
+    }
+
+	.b{background-color: #435D69;}
+
+    ul li{
+    	width:10%;
+    	height:0%;
+    	padding:10px;
+    	background-color: #546E7A;
+    	font-size:20px;
+		text-align:center;
+       	overflow:hidden;
+    }
+    .puzzle:hover{
+    	cursor: pointer;
+    }
+    
+.puzzle{
+	position:absolute;
+	left:0%;
+	top:0%;
+	height:58px;
+	width:58px;
+	
+	transition: all 1s;
+}
+
+#p{
+	width:58px;
+    margin:0px;
+    left:0%;
+	height:58px;
+	transition: all 1s;
+
+}
+
+    ul li:hover{
+    	background-color:#CFD8DC;
+		color:black;
+		
+    }
+
+	ul li a:hover{
+		color:black;
+	}
+        </style>
+
+    </head>
+    <body>
+
+    <img src="assets/red panda.jpg" alt="Red Panda" id="image" />
+
+    <a id="down" href="assets/red panda.jpg" download>
+    <h1 id="text">Red Panda</h1>
+    </a>
+    <img src = "assets/play-black-triangle-interface-symbol-for-multimedia.svg" alt="next" id="next" onclick='change()' />
+    <img src = "assets/prev.png" alt="prev" onclick="t()" id="prev"/>
+
+
+      <div id="dropdown" class="dropdown">
+<ul>
+<li class="a"><a href="http://localhost:8080/home.html">Home</a></li>
+<li class="b"><a href="#about">About Us</a></li>
+<li class="a"><a href="http://localhost:8080/feedback.html">Feedback</a></li>
+<li class="b"><a href="#gallery">Gallery</a></li>
+<li class="a"><a href="http://localhost:8080/chat.html">Chat bot</a></li>
+<li class="b"><a href="http://localhost:8080/slideshow.html">Slideshow</a></li>
+</ul>
+</div>
+
+<div class="puzzle" id="puzzle">
+ <img src="assets/puzzle.svg" id="p"/>
+</div>
+    <script>
+
+        var images = ["assets/red panda.jpg","assets/Tiger.jpg","assets/amur_leo.jpg","assets/hawksbill.jpg"];
+        var text = ["Red Panda","Tiger","Amur Leopard","Hawksbill Turtle"];
+        i=0;
+
+        document.addEventListener("keydown",key,false);
+
+
+
+      
+
+        function change()
+        {
+            i++;
+            if(i==4)
+                i=0;
+            if(i<0)
+                i=3;
+            
+        document.getElementById('image').src=images[i];
+        document.getElementById('text').textContent=text[i];
+        document.getElementById('down').href=images[i];
+
+            
+        }
+
+        
+        function t()
+        {
+            i=i-2;
+            
+
+            change();
+        }
+
+        function key(x)
+        {
+            if (x.keyCode==39)
+                change();
+            if(x.keyCode==37)
+                t();
+        }
+
+        setInterval(change,3000);
+
+        
+	function menuopen(e){
+		
+		 	document.getElementById("dropdown").style.display="block";
+		 	
+		 	document.getElementById("p").style.transform="rotate(180deg)";
+	}
+
+
+    document.getElementById('p').addEventListener("click",menuopen,false);
+	document.addEventListener("click",close,false);
+
+function close(e)
+	{
+				
+      
+				if(e.target.id!='p' && document.getElementById('dropdown').style.display=='block')
+				{document.getElementById("dropdown").style.display="none";
+				document.getElementById("p").style.transform="rotate(0deg)";
+				
+					}
+
+	}
+
+    </script>
+
+    </body>
+
+
+</html>

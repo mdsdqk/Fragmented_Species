@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Puzzle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="stroked" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Activities" sketch:type="MSLayerGroup" transform="translate(-494.000000, 2.000000)" stroke="#fa7470" stroke-width="2" stroke-linejoin="round">
+            <g id="Puzzle" transform="translate(502.000000, 7.000000)" sketch:type="MSShapeGroup">
+                <path d="M38,26.9381062 L38,38 L27,38 C27,42.418278 23.418278,46 19,46 C14.581722,46 11,42.418278 11,38 L0,38 L0,0 L38,0 L38,11.0618938 C37.6724058,11.0210433 37.3386603,11 37,11 C32.581722,11 29,14.581722 29,19 C29,23.418278 32.581722,27 37,27 C37.3386603,27 37.6724058,26.9789567 38,26.9381062 Z" id="Rectangle-940" stroke-linecap="round"></path>
+                <path d="M4,20 L4,4 L20,4" id="Rectangle-941" stroke-linecap="round"></path>
+                <path d="M48,19 L40,19" id="Line" stroke-linecap="square"></path>
+                <path d="M40,22 L40,16 L46,16" id="Rectangle-941" stroke-linecap="round" transform="translate(43.000000, 19.000000) rotate(-45.000000) translate(-43.000000, -19.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
